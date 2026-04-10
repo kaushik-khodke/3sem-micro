@@ -1,0 +1,96 @@
+{
+  "name": "FaceGuard Pro - Advanced Face Recognition",
+  "short_name": "FaceGuard Pro",
+  "description": "Next-generation face recognition system with AI-powered security, emotion detection, and advanced analytics",
+  "version": "1.0.0",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0f0f23",
+  "theme_color": "#667eea",
+  "orientation": "portrait-primary",
+  "scope": "/",
+  "lang": "en-US",
+  "categories": ["security", "productivity", "utilities", "business"],
+  "screenshots": [
+    {
+      "src": "/screenshot1.png",
+      "sizes": "1280x720",
+      "type": "image/png",
+      "platform": "wide",
+      "label": "FaceGuard Pro Welcome Screen"
+    },
+    {
+      "src": "/screenshot2.png", 
+      "sizes": "390x844",
+      "type": "image/png",
+      "platform": "narrow",
+      "label": "Face Recognition Scanner"
+    }
+  ],
+  "icons": [
+    {
+      "src": "data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDgiIGhlaWdodD0iNDgiIHZpZXdCb3g9IjAgMCA0OCA0OCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjQ4IiBoZWlnaHQ9IjQ4IiByeD0iMTIiIGZpbGw9InVybCgjZ3JhZGllbnQwXzQ4XzQ4KSIvPgo8cGF0aCBkPSJNMTYgMThDMTYgMTYuODk1NCAxNi44OTU0IDE2IDE4IDE2SDMwQzMxLjEwNDYgMTYgMzIgMTYuODk1NCAzMiAxOFYzMEMzMiAzMS4xMDQ2IDMxLjEwNDYgMzIgMzAgMzJIMThDMTYuODk1NCAzMiAxNiAzMS4xMDQ2IDE2IDMwVjE4WiIgZmlsbD0id2hpdGUiLz4KPGNpcmNsZSBjeD0iMjQiIGN5PSIyMiIgcj0iMi41IiBmaWxsPSIjNjY3ZWVhIi8+CjxwYXRoIGQ9Ik0xOSAyOEMyMCAyNi41IDIyIDI2IDI0IDI2QzI2IDI2IDI4IDI2LjUgMjkgMjgiIHN0cm9rZT0iIzY2N2VlYSIgc3Ryb2tlLXdpZHRoPSIxLjUiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIvPgo8ZGVmcz4KPGxpbmVhckdyYWRpZW50IGlkPSJncmFkaWVudDBfNDhfNDgiIHgxPSIwIiB5MT0iMCIgeDI9IjQ4IiB5Mj0iNDgiIGdyYWRpZW50VW5pdHM9InVzZXJTcGFjZU9uVXNlIj4KPHN0b3Agc3RvcC1jb2xvcj0iIzY2N2VlYSIvPgo8c3RvcCBvZmZzZXQ9IjEiIHN0b3AtY29sb3I9IiM3NjRiYTIiLz4KPC9saW5lYXJHcmFkaWVudD4KPC9kZWZzPgo8L3N2Zz4K",
+      "sizes": "48x48",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    },
+    {
+      "src": "data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNzIiIGhlaWdodD0iNzIiIHZpZXdCb3g9IjAgMCA3MiA3MiIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjcyIiBoZWlnaHQ9IjcyIiByeD0iMTYiIGZpbGw9InVybCgjZ3JhZGllbnQwXzcyXzcyKSIvPgo8cGF0aCBkPSJNMjQgMjdDMjQgMjUuMzQzMSAyNS4zNDMxIDI0IDI3IDI0SDQ1QzQ2LjY1NjkgMjQgNDggMjUuMzQzMSA0OCAyN1Y0NUM0OCA0Ni42NTY5IDQ2LjY1NjkgNDggNDUgNDhIMjdDMjUuMzQzMSA0OCAyNCA0Ni42NTY5IDI0IDQ1VjI3WiIgZmlsbD0id2hpdGUiLz4KPGNpcmNsZSBjeD0iMzYiIGN5PSIzMyIgcj0iMy41IiBmaWxsPSIjNjY3ZWVhIi8+CjxwYXRoIGQ9Ik0yOC41IDQyQzMwIDM5LjUgMzMgMzkgMzYgMzlDMzkgMzkgNDIgMzkuNSA0My41IDQyIiBzdHJva2U9IiM2NjdlZWEiIHN0cm9rZS13aWR0aD0iMi4yNSIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIi8+CjxkZWZzPgo8bGluZWFyR3JhZGllbnQgaWQ9ImdyYWRpZW50MF83Ml83MiIgeDE9IjAiIHkxPSIwIiB4Mj0iNzIiIHkyPSI3MiIgZ3JhZGllbnRVbml0cz0idXNlclNwYWNlT25Vc2UiPgo8c3RvcCBzdG9wLWNvbG9yPSIjNjY3ZWVhIi8+CjxzdG9wIG9mZnNldD0iMSIgc3RvcC1jb2xvcj0iIzc2NGJhMiIvPgo8L2xpbmVhckdyYWRpZW50Pgo8L2RlZnM+Cjwvc3ZnPgo=",
+      "sizes": "72x72",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    },
+    {
+      "src": "data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iOTYiIGhlaWdodD0iOTYiIHZpZXdCb3g9IjAgMCA5NiA5NiIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9Ijk2IiBoZWlnaHQ9Ijk2IiByeD0iMjAiIGZpbGw9InVybCgjZ3JhZGllbnQwXzk2Xzk2KSIvPgo8cGF0aCBkPSJNMzIgMzZDMzIgMzMuNzkwOSAzMy43OTA5IDMyIDM2IDMySDYwQzYyLjIwOTEgMzIgNjQgMzMuNzkwOSA2NCAzNlY2MEM2NCA2Mi4yMDkxIDYyLjIwOTEgNjQgNjAgNjRIMzZDMzMuNzkwOSA2NCAzMiA2Mi4yMDkxIDMyIDYwVjM2WiIgZmlsbD0id2hpdGUiLz4KPGNpcmNsZSBjeD0iNDgiIGN5PSI0NCIgcj0iNSIgZmlsbD0iIzY2N2VlYSIvPgo8cGF0aCBkPSJNMzggNTZDNDAgNTMgNDQgNTIgNDggNTJDNTIgNTIgNTYgNTMgNTggNTYiIHN0cm9rZT0iIzY2N2VlYSIgc3Ryb2tlLXdpZHRoPSIzIiBzdHJva2UtbGluZWNhcD0icm91bmQiLz4KPGRlZnM+CjxsaW5lYXJHcmFkaWVudCBpZD0iZ3JhZGllbnQwXzk2Xzk2IiB4MT0iMCIgeTE9IjAiIHgyPSI5NiIgeTI9Ijk2IiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSI+CjxzdG9wIHN0b3AtY29sb3I9IiM2NjdlZWEiLz4KPHN0b3Agb2Zmc2V0PSIxIiBzdG9wLWNvbG9yPSIjNzY0YmEyIi8+CjwvbGluZWFyR3JhZGllbnQ+CjwvZGVmcz4KPC9zdmc+Cg==",
+      "sizes": "96x96",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    },
+    {
+      "src": "data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTQ0IiBoZWlnaHQ9IjE0NCIgdmlld0JveD0iMCAwIDE0NCAxNDQiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxyZWN0IHdpZHRoPSIxNDQiIGhlaWdodD0iMTQ0IiByeD0iMjQiIGZpbGw9InVybCgjZ3JhZGllbnQwXzE0NF8xNDQpIi8+CjxwYXRoIGQ9Ik00OCA1NEM0OCA1MC42ODYzIDUwLjY4NjMgNDggNTQgNDhIOTBDOTMuMzEzNyA0OCA5NiA1MC42ODYzIDk2IDU0Vjg4Qzk2IDkxLjMxMzcgOTMuMzEzNyA5NCA5MCA5NEg1NEMNMC42ODYzIDk0IDQ4IDkxLjMxMzcgNDggODhWNTRaIiBmaWxsPSJ3aGl0ZSIvPgo8Y2lyY2xlIGN4PSI3MiIgY3k9IjY2IiByPSI3LjUiIGZpbGw9IiM2NjdlZWEiLz4KPHBhdGggZD0iTTU3IDgwQzYwIDc4IDY2IDc4IDcyIDc4Qzc4IDc4IDg0IDc4IDg3IDgwIiBzdHJva2U9IiM2NjdlZWEiIHN0cm9rZS13aWR0aD0iNC41IiBzdHJva2UtbGluZWNhcD0icm91bmQiLz4KPGRlZnM+CjxsaW5lYXJHcmFkaWVudCBpZD0iZ3JhZGllbnQwXzE0NF8xNDQiIHgxPSIwIiB5MT0iMCIgeDI9IjE0NCIgeTI9IjE0NCIgZ3JhZGllbnRVbml0cz0idXNlclNwYWNlT25Vc2UiPgo8c3RvcCBzdG9wLWNvbG9yPSIjNjY3ZWVhIi8+CjxzdG9wIG9mZnNldD0iMSIgc3RvcC1jb2xvcj0iIzc2NGJhMiIvPgo8L2xpbmVhckdyYWRpZW50Pgo8L2RlZnM+Cjwvc3ZnPgo=",
+      "sizes": "144x144",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    },
+    {
+      "src": "data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTkyIiBoZWlnaHQ9IjE5MiIgdmlld0JveD0iMCAwIDE5MiAxOTIiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxyZWN0IHdpZHRoPSIxOTIiIGhlaWdodD0iMTkyIiByeD0iMzIiIGZpbGw9InVybCgjZ3JhZGllbnQwXzE5Ml8xOTIpIi8+CjxwYXRoIGQ9Ik02NCA3MkM2NCA2Ny41ODE3IDY3LjU4MTcgNjQgNzIgNjRIMTIwQzEyNC40MTggNjQgMTI4IDY3LjU4MTcgMTI4IDcyVjEyMEMxMjggMTI0LjQxOCAxMjQuNDE4IDEyOCAxMjAgMTI4SDcyQzY3LjU4MTcgMTI4IDY0IDEyNC40MTggNjQgMTIwVjcyWiIgZmlsbD0id2hpdGUiLz4KPGNpcmNsZSBjeD0iOTYiIGN5PSI4OCIgcj0iMTAiIGZpbGw9IiM2NjdlZWEiLz4KPHBhdGggZD0iTTc2IDEwOEM4MCA4MCA4OCA4MCA5NiA4MEMxMDQgODAgMTEyIDgwIDExNiAxMDgiIHN0cm9rZT0iIzY2N2VlYSIgc3Ryb2tlLXdpZHRoPSI2IiBzdHJva2UtbGluZWNhcD0icm91bmQiLz4KPGRlZnM+CjxsaW5lYXJHcmFkaWVudCBpZD0iZ3JhZGllbnQwXzE5Ml8xOTIiIHgxPSIwIiB5MT0iMCIgeDI9IjE5MiIgeTI9IjE5MiIgZ3JhZGllbnRVbml0cz0idXNlclNwYWNlT25Vc2UiPgo8c3RvcCBzdG9wLWNvbG9yPSIjNjY3ZWVhIi8+CjxzdG9wIG9mZnNldD0iMSIgc3RvcC1jb2xvcj0iIzc2NGJhMiIvPgo8L2xpbmVhckdyYWRpZW50Pgo8L2RlZnM+Cjwvc3ZnPgo=",
+      "sizes": "192x192",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNTEyIiBoZWlnaHQ9IjUxMiIgdmlld0JveD0iMCAwIDUxMiA1MTIiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxyZWN0IHdpZHRoPSI1MTIiIGhlaWdodD0iNTEyIiByeD0iNjQiIGZpbGw9InVybCgjZ3JhZGllbnQwXzUxMl81MTIpIi8+CjxwYXRoIGQ9Ik0xNjggMTkyQzE2OCAxNzQuMzI3IDE4Mi4zMjcgMTYwIDE5MiAxNjBIMzIwQzMzNy42NzMgMTYwIDM1MiAxNzQuMzI3IDM1MiAxOTJWMzIwQzM1MiAzMzcuNjczIDMzNy42NzMgMzUyIDMyMCAzNTJIMTkyQzE3NC4zMjcgMzUyIDE2OCAzMzcuNjczIDE2OCAzMjBWMTkyWiIgZmlsbD0id2hpdGUiLz4KPGNpcmNsZSBjeD0iMjU2IiBjeT0iMjMwIiByPSIyNiIgZmlsbD0iIzY2N2VlYSIvPgo8cGF0aCBkPSJNMTk4IDMwQzIwNiAyNzAgMjMwIDI3MCAyNTYgMjcwQzI4MiAyNzAgMzA2IDI3MCAzMTQgMzAiIHN0cm9rZT0iIzY2N2VlYSIgc3Ryb2tlLXdpZHRoPSIxNiIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIi8+CjxkZWZzPgo8bGluZWFyR3JhZGllbnQgaWQ9ImdyYWRpZW50MF81MTJfNTEyIiB4MT0iMCIgeTE9IjAiIHgyPSI1MTIiIHkyPSI1MTIiIGdyYWRpZW50VW5pdHM9InVzZXJTcGFjZU9uVXNlIj4KPHN0b3Agc3RvcC1jb2xvcj0iIzY2N2VlYSIvPgo8c3RvcCBvZmZzZXQ9IjEiIHN0b3AtY29sb3I9IiM3NjRiYTIiLz4KPC9saW5lYXJHcmFkaWVudD4KPC9kZWZzPgo8L3N2Zz4K",
+      "sizes": "512x512",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "Start Recognition",
+      "short_name": "Recognize",
+      "description": "Start face recognition scanner",
+      "url": "/?action=recognize",
+      "icons": [
+        {
+          "src": "data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iOTYiIGhlaWdodD0iOTYiIHZpZXdCb3g9IjAgMCA5NiA5NiIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPGNpcmNsZSBjeD0iNDgiIGN5PSI0OCIgcj0iNDgiIGZpbGw9IiNmMDkzZmIiLz4KPHBhdGggZD0iTTM0IDQ0SDYyVjUySDM0VjQ0WiIgZmlsbD0id2hpdGUiLz4KPC9zdmc+",
+          "sizes": "96x96",
+          "type": "image/svg+xml"
+        }
+      ]
+    },
+    {
+      "name": "View Attendance",
+      "short_name": "Attendance",
+      "description": "View attendance records and statistics",
+      "url": "/?action=attendance",
+      "icons": [
+        {
+          "src": "data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iOTYiIGhlaWdodD0iOTYiIHZpZXdCb3g9IjAgMCA5NiA5NiIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPGNpcmNsZSBjeD0iNDgiIGN5PSI0OCIgcj0iNDgiIGZpbGw9IiNmMGY5M2ZiIi8+CjxwYXRoIGQ9Ik00MiA0OEg1MFY1NEg0MlY0OFoiIGZpbGw9IndoaXRlIi8+Cjwvc3ZnPg==",
+            "sizes": "96x96",   
+            "type": "image/svg+xml"
+        }
+        ]
+    }
+  ]
+}

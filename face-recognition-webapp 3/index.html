@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FaceGuard Pro - Advanced Face Recognition</title>
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#667eea">
+    <link rel="icon" type="image/png" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABHNCSVQICAgIfAhkiAAAAAlwSFlzAAAAdgAAAHYBTnsmCAAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAANCSURBVFiFtZdNbBtVEMd/4/XajePEH3ESJ05I2qRJaZuGJqGlKRQQoKJIXBBCQkLiBnfEBU5cuHDgwIkbJ04ILlw4cOEAEheEkBBCgkMrWlrapKVJ0zRO4sSJ7djx17ezw2E/bMfrOEn/0mhnZ9687/3fzLwZwzRNkyRJkiRJkiRJkiRJkiRJkiRJ0v8qwzAMwzAMwzAMwzAMwzAMwzAMw/iv5J8AlmVZlmVZlmVZlmVZlmVZlmVZ/5csy7Isy7Isy7Isy7Isy7Isy7L+L1mWZVmWZVmWZVmWZVmWZVmW9X/Jsqz/A2BZlmVZlmVZlmVZlmVZlmVZlvV/ybKs/wNgWZZlWZZlWZZlWZZlWZZlWdb/Jcuy/g+AZVmWZVmWZVmWZVmWZVmWZVn/lyzL+j8AlmVZlmVZlmVZlmVZlmVZlmX9X7Is6/8AWJZlWZZlWZZlWZZlWZZlWZb1f8myrP8DYFmWZVmWZVmWZVmWZVmWZVnW/yXLsv4PgGVZlmVZlmVZlmVZlmVZlmVZ/5csy/o/AJZlWZZlWZZlWZZlWZZlWZZl/V+yLOv/AFiWZVmWZVmWZVmWZVmWZVmW9X/Jsqz/A2BZlmVZlmVZlmVZlmVZlmVZ/5csy/o/AJZlWZZlWZZlWZZlWZZlWZZl/V+yLOv/AFiWZVmWZVmWZVmWZVmWZVmW9X/Jsqz/A2BZlmVZlmVZlmVZlmVZlmVZ/5csy/o/AJZlWZZlWZZlWZZlWZZlWZZl/V+yLOv/AFiWZVmWZVmWZVmWZVmWZVmW9X/Jsqz/A2BZlmVZlmVZlmVZlmVZlmVZ/5csy/o/AJZlWZZlWZZlWZZlWZZlWZZl/V+yLOv/AFiWZVmWZVmWZVmWZVmWZVmW9X/Jsqz/A2BZlmVZlmVZlmVZlmVZlmVZ/5csy/o/AJZlWZZlWZZlWZZlWZZlWZZl/V+yLOv/AFiWZVmWZVmWZVmWZVmWZVmW9X/Jsqz/A2BZlmVZlmVZlmVZlmVZlmVZ/5f8A8vY3v8TgTJBAAAAAElFTkSuQmCC">
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body data-theme="dark">
+    <!-- Animated Background with Particles -->
+    <div class="animated-background">
+        <div class="gradient-orb orb-1"></div>
+        <div class="gradient-orb orb-2"></div>
+        <div class="gradient-orb orb-3"></div>
+        <div class="particles" id="particles"></div>
+    </div>
+    <div class="grid-overlay"></div>
+
+    <!-- Premium Header -->
+    <header class="header">
+        <nav class="nav">
+            <div class="logo">
+                <div class="logo-icon">
+                    <i class="fas fa-shield-halved"></i>
+                    <div class="logo-glow"></div>
+                </div>
+                <div class="logo-text">
+                    <span class="logo-main">FaceGuard</span>
+                    <span class="logo-sub">Pro</span>
+                </div>
+            </div>
+            <div class="nav-controls">
+                <button class="glass-btn" id="adminLoginBtn">
+                    <i class="fas fa-user-shield"></i>
+                    <span>Admin Panel</span>
+                    <div class="btn-shine"></div>
+                </button>
+                <button class="glass-btn" id="adminLogoutBtn" style="display: none;">
+                    <i class="fas fa-sign-out-alt"></i>
+                    <span>Logout</span>
+                    <div class="btn-shine"></div>
+                </button>
+                <button class="glass-btn" id="installBtn" style="display: none;">
+                    <i class="fas fa-download"></i>
+                    <span>Install App</span>
+                    <div class="btn-shine"></div>
+                </button>
+                <button class="glass-btn theme-toggle" id="themeToggle">
+                    <i class="fas fa-moon"></i>
+                    <div class="btn-shine"></div>
+                </button>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Welcome Page -->
+    <div class="page active" id="welcomePage">
+        <div class="container">
+            <div class="welcome-content">
+                <div class="hero-badge">
+                    <i class="fas fa-star"></i>
+                    <span>Next-Gen Security Platform</span>
+                </div>
+                
+                <h1 class="hero-title">
+                    <div class="title-line">
+                        <span class="title-icon">
+                            <i class="fas fa-shield-alt"></i>
+                        </span>
+                        <span class="title-text">FaceGuard</span>
+                    </div>
+                    <div class="title-line">
+                        <span class="title-gradient">Pro</span>
+                    </div>
+                </h1>
+                
+                <p class="hero-subtitle">
+                    Experience the future of biometric authentication with AI-powered precision and enterprise-grade security
+                </p>
+
+                <div class="hero-stats">
+                    <div class="stat-item">
+                        <div class="stat-value">99.9%</div>
+                        <div class="stat-label">Accuracy</div>
+                    </div>
+                    <div class="stat-divider"></div>
+                    <div class="stat-item">
+                        <div class="stat-value">&lt;0.5s</div>
+                        <div class="stat-label">Response Time</div>
+                    </div>
+                    <div class="stat-divider"></div>
+                    <div class="stat-item">
+                        <div class="stat-value">256-bit</div>
+                        <div class="stat-label">Encryption</div>
+                    </div>
+                </div>
+
+                <div class="feature-grid">
+                    <div class="feature-card" data-tilt>
+                        <div class="feature-icon-wrapper">
+                            <i class="fas fa-user-check feature-icon"></i>
+                            <div class="icon-glow"></div>
+                        </div>
+                        <h3>Advanced Recognition</h3>
+                        <p>State-of-the-art facial detection powered by deep learning algorithms with 99.9% accuracy</p>
+                        <div class="feature-badge">AI Powered</div>
+                    </div>
+                    
+                    <div class="feature-card" data-tilt>
+                        <div class="feature-icon-wrapper">
+                            <i class="fas fa-smile feature-icon"></i>
+                            <div class="icon-glow"></div>
+                        </div>
+                        <h3>Emotion Analytics</h3>
+                        <p>Real-time mood detection and emotional state analysis for enhanced user insights</p>
+                        <div class="feature-badge">Real-time</div>
+                    </div>
+                    
+                    <div class="feature-card" data-tilt>
+                        <div class="feature-icon-wrapper">
+                            <i class="fas fa-clock feature-icon"></i>
+                            <div class="icon-glow"></div>
+                        </div>
+                        <h3>Smart Attendance</h3>
+                        <p>Automated logging with detailed analytics, timestamps, and comprehensive reporting</p>
+                        <div class="feature-badge">Automated</div>
+                    </div>
+                    
+                    <div class="feature-card" data-tilt>
+                        <div class="feature-icon-wrapper">
+                            <i class="fas fa-user-shield feature-icon"></i>
+                            <div class="icon-glow"></div>
+                        </div>
+                        <h3>Admin Control</h3>
+                        <p>Secure authentication portal with advanced user management and access controls</p>
+                        <div class="feature-badge">Secure</div>
+                    </div>
+                    
+                    <div class="feature-card" data-tilt>
+                        <div class="feature-icon-wrapper">
+                            <i class="fas fa-mobile-alt feature-icon"></i>
+                            <div class="icon-glow"></div>
+                        </div>
+                        <h3>Progressive Web App</h3>
+                        <p>Install as native app on any device with offline capabilities and instant loading</p>
+                        <div class="feature-badge">PWA Ready</div>
+                    </div>
+                    
+                    <div class="feature-card" data-tilt>
+                        <div class="feature-icon-wrapper">
+                            <i class="fas fa-database feature-icon"></i>
+                            <div class="icon-glow"></div>
+                        </div>
+                        <h3>Multi-User Platform</h3>
+                        <p>Enterprise-grade database with unlimited user profiles and encrypted storage</p>
+                        <div class="feature-badge">Scalable</div>
+                    </div>
+                </div>
+
+                <button class="cta-button" id="startRecognition">
+                    <span class="btn-content">
+                        <i class="fas fa-rocket"></i>
+                        Launch Recognition System
+                    </span>
+                    <div class="btn-glow"></div>
+                </button>
+                <br><br>
+                <button class="cta-button" id="startSuspiciousAI" style="background: linear-gradient(135deg, #f5576c 0%, #f093fb 100%);">
+                    <span class="btn-content">
+                        <i class="fas fa-exclamation-triangle"></i>
+                        Suspicious Activity Detection
+                    </span>
+                    <div class="btn-glow"></div>
+                </button>
+                
+                <div class="trust-badges">
+                    <div class="trust-item">
+                        <i class="fas fa-lock"></i>
+                        <span>SSL Secured</span>
+                    </div>
+                    <div class="trust-item">
+                        <i class="fas fa-shield-alt"></i>
+                        <span>GDPR Compliant</span>
+                    </div>
+                    <!-- <div class="trust-item">
+                        <i class="fas fa-check-circle"></i> -->
+                        <!-- <span>ISO Certified</span> -->
+                    <!-- </div> -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Camera Page -->
+    <div class="page" id="cameraPage">
+        <div class="container">
+            <div class="camera-container">
+                <div class="camera-header">
+                    <h2 class="camera-title">
+                        <i class="fas fa-video"></i>
+                        <span>Biometric Scanner</span>
+                    </h2>
+                    <p class="camera-subtitle">Position your face within the frame for instant recognition</p>
+                </div>
+
+                <div class="video-wrapper">
+                    <video id="video" autoplay muted></video>
+                    <canvas id="canvas" style="display: none;"></canvas>
+                    <img id="suspiciousResultImg" style="display: none; position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 20; object-fit: contain; border-radius: 20px; background: var(--bg-dark);">
+                    
+                    <div class="scan-overlay" id="scanOverlay">
+                        <div class="scan-line"></div>
+                        <div class="face-frame">
+                            <div class="corner corner-tl"></div>
+                            <div class="corner corner-tr"></div>
+                            <div class="corner corner-bl"></div>
+                            <div class="corner corner-br"></div>
+                            <div class="face-indicator"></div>
+                        </div>
+                    </div>
+                    
+                    <div class="status-badge" id="status">
+                        <div class="status-pulse"></div>
+                        <div class="status-dot"></div>
+                        <span>Initializing Camera...</span>
+                    </div>
+                    
+                    <div class="camera-effects">
+                        <div class="light-beam"></div>
+                    </div>
+                </div>
+
+                <div class="camera-controls">
+                    <button class="glass-btn secondary" id="backBtn">
+                        <i class="fas fa-arrow-left"></i>
+                        <span>Back</span>
+                    </button>
+                    <button class="cta-button compact" id="captureBtn">
+                        <span class="btn-content">
+                            <i class="fas fa-camera"></i>
+                            Capture & Recognize
+                        </span>
+                        <div class="btn-glow"></div>
+                    </button>
+                    <button class="cta-button compact" id="stopSuspiciousBtn" style="display: none; background: #ff4444;">
+                        <span class="btn-content">
+                            <i class="fas fa-stop"></i>
+                            Stop Monitoring
+                        </span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Success Page -->
+    <div class="page" id="successPage">
+        <div class="success-animation" id="confettiContainer"></div>
+        
+        <div class="container">
+            <div class="success-container">
+                <div class="profile-card">
+                    <div class="success-icon">
+                        <i class="fas fa-check"></i>
+                        <div class="success-ripple"></div>
+                    </div>
+                    
+                    <div class="profile-header">
+                        <h2 class="profile-name" id="userName">Welcome Back!</h2>
+                        <p class="profile-status" id="userStatus">
+                            <i class="fas fa-check-circle"></i>
+                            Recognition Successful
+                        </p>
+                    </div>
+
+                    <div class="profile-details">
+                        <div class="detail-item">
+                            <div class="detail-icon">
+                                <i class="fas fa-clock"></i>
+                            </div>
+                            <div class="detail-content">
+                                <span class="detail-label">Time</span>
+                                <span class="detail-value" id="loginTime">--:--</span>
+                            </div>
+                        </div>
+                        <div class="detail-item">
+                            <div class="detail-icon">
+                                <i class="fas fa-calendar"></i>
+                            </div>
+                            <div class="detail-content">
+                                <span class="detail-label">Date</span>
+                                <span class="detail-value" id="loginDate">--/--/----</span>
+                            </div>
+                        </div>
+                        <div class="detail-item">
+                            <div class="detail-icon">
+                                <i class="fas fa-smile"></i>
+                            </div>
+                            <div class="detail-content">
+                                <span class="detail-label">Mood</span>
+                                <span class="detail-value" id="userMood">Happy</span>
+                            </div>
+                        </div>
+                        <div class="detail-item">
+                            <div class="detail-icon">
+                                <i class="fas fa-percent"></i>
+                            </div>
+                            <div class="detail-content">
+                                <span class="detail-label">Confidence</span>
+                                <span class="detail-value" id="confidence">99%</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="motivational-quote">
+                        <i class="fas fa-quote-left quote-icon"></i>
+                        <p id="quoteText">Your future is created by what you do today, not tomorrow.</p>
+                        <span id="quoteAuthor">- Robert Kiyosaki</span>
+                    </div>
+
+                    <div class="success-actions">
+                        <button class="glass-btn" id="viewAttendance">
+                            <i class="fas fa-chart-bar"></i>
+                            <span>Analytics</span>
+                        </button>
+                        <button class="glass-btn" id="recognizeAgain">
+                            <i class="fas fa-redo"></i>
+                            <span>Scan Again</span>
+                        </button>
+                        <button class="glass-btn" id="homeBtn">
+                            <i class="fas fa-home"></i>
+                            <span>Home</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Admin Login Modal -->
+    <div class="modal" id="adminLoginModal">
+        <div class="modal-backdrop"></div>
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>
+                    <i class="fas fa-user-shield"></i>
+                    <span>Admin Authentication</span>
+                </h3>
+                <button class="modal-close" id="closeLoginModal">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="login-form">
+                    <div class="login-error" id="loginError"></div>
+                    
+                    <div class="form-group">
+                        <label for="adminEmail">
+                            <i class="fas fa-envelope"></i>
+                            Email Address
+                        </label>
+                        <input 
+                            type="email" 
+                            id="adminEmail" 
+                            placeholder="admin@faceguard.com"
+                            autocomplete="email"
+                        >
+                    </div>
+
+                    <div class="form-group">
+                        <label for="adminPassword">
+                            <i class="fas fa-lock"></i>
+                            Password
+                        </label>
+                        <input 
+                            type="password" 
+                            id="adminPassword" 
+                            placeholder="Enter your secure password"
+                            autocomplete="current-password"
+                        >
+                    </div>
+
+                    <div class="login-actions">
+                        <button class="glass-btn secondary" id="closeLoginModal2">
+                            Cancel
+                        </button>
+                        <button class="cta-button compact" id="loginSubmitBtn">
+                            <span class="btn-content">
+                                <i class="fas fa-sign-in-alt"></i>
+                                Login Securely
+                            </span>
+                            <div class="btn-glow"></div>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Attendance Modal -->
+    <div class="modal" id="attendanceModal">
+        <div class="modal-backdrop"></div>
+        <div class="modal-content large">
+            <div class="modal-header">
+                <h3>
+                    <i class="fas fa-chart-line"></i>
+                    <span>Attendance Analytics</span>
+                </h3>
+                <button class="modal-close" id="closeModal">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="attendance-stats">
+                    <div class="stat-card">
+                        <div class="stat-icon">
+                            <i class="fas fa-calendar-check"></i>
+                        </div>
+                        <span class="stat-number" id="totalDays">0</span>
+                        <span class="stat-label">Total Days</span>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon">
+                            <i class="fas fa-clock"></i>
+                        </div>
+                        <span class="stat-number" id="avgTime">--:--</span>
+                        <span class="stat-label">Avg Time</span>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon">
+                            <i class="fas fa-fire"></i>
+                        </div>
+                        <span class="stat-number" id="streak">0</span>
+                        <span class="stat-label">Day Streak</span>
+                    </div>
+                </div>
+                <div class="attendance-list" id="attendanceList">
+                    <!-- Attendance records will be populated here -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Loading Spinner -->
+    <div class="loading-spinner" id="loadingSpinner">
+        <div class="spinner-ring"></div>
+        <div class="spinner-ring"></div>
+        <div class="spinner-ring"></div>
+        <p>Processing...</p>
+    </div>
+
+    <!-- Scripts -->
+    <script src="script.js"></script>
+    <audio id="alertSound" src="assets/alert.mp3" preload="auto"></audio>
+</body>
+</html>
