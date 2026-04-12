@@ -1,0 +1,53 @@
+# ===========================
+# Python
+# ===========================
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+
+# Virtual environments
+.venv/
+venv/
+ENV/
+env/
+
+# Distribution / packaging
+*.egg-info/
+*.egg
+dist/
+build/
+
+# ===========================
+# YOLO / ML Model files
+# ===========================
+*.pt
+*.onnx
+*.engine
+*.torchscript
+runs/
+
+# ===========================
+# IDE / Editor
+# ===========================
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# ===========================
+# OS files
+# ===========================
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# ===========================
+# Project-specific
+# ===========================
+*.db
+*.sqlite3
+saved_frames/
+logs/
+*.log
