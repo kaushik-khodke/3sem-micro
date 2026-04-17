@@ -453,13 +453,20 @@ class FaceGuardPro {
         const alertAudio = document.getElementById('alertSound');
         const video = document.getElementById('video');
         
+        // Create an off-screen canvas for high-performance resizing
+        const offscreenCanvas = document.createElement('canvas');
+        offscreenCanvas.width = 640;
+        offscreenCanvas.height = 480;
+        const offscreenCtx = offscreenCanvas.getContext('2d');
+
         this.suspicious_interval = setInterval(async () => {
             if (isProcessing || !this.isSuspiciousMode) return;
             
             isProcessing = true;
             try {
-                this.ctx.drawImage(this.video, 0, 0, this.canvas.width, this.canvas.height);
-                const imageData = this.canvas.toDataURL('image/jpeg', 0.6); // slight compression for speed
+                // Resize to 640x480 on client side to save bandwidth and server load
+                offscreenCtx.drawImage(this.video, 0, 0, 640, 480);
+                const imageData = offscreenCanvas.toDataURL('image/jpeg', 0.7); 
 
                 const response = await fetch('/api/suspicious_frame', {
                     method: 'POST',
@@ -531,7 +538,7 @@ class FaceGuardPro {
                 }
             }
             isProcessing = false;
-        }, 150); // ~7-10 fps depending on processing
+        }, 100); // Optimized to 10 FPS
     }
 
     async captureAndRecognize() {

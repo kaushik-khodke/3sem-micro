@@ -1,3 +1,4 @@
+import torch
 from ultralytics import YOLO
 import numpy as np
 import config
@@ -8,11 +9,21 @@ class Detector:
         if model_path is None:
             model_path = config.MODEL_PATH
         self.model_path = str(model_path)
+        
+        # Auto-detect device
+        self.device = 'cuda' if torch.cuda.is_available() else 'cpu'
+        print(f"[Detector] Initializing {model_path} on {self.device}")
+        
         self.model = YOLO(model_path)
         self.is_pose = "pose" in self.model_path
+        
         # fuse() only applies to PyTorch models
         if not self.model_path.endswith(".onnx"):
             self.model.fuse()
+        
+        # Move model to device
+        self.model.to(self.device)
+            
         # Pose model only detects persons; detection model uses full class list
         self._classes = [config.PERSON] if self.is_pose else config.DETECTION_CLASSES
 

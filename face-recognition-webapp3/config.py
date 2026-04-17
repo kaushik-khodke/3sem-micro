@@ -75,7 +75,7 @@ DANGEROUS_OBJECTS = WEAPON_CLASSES + [BOTTLE]  # bottle can look like a weapon
 OBJECT_MODEL_PATH = _os.path.join(_BASE_DIR, "yolov8s.pt")
 
 # Behavior thresholds
-LOITER_TIME = 10
+LOITER_TIME = 20
 LOITER_MOVEMENT_THRESHOLD = 30
 
 ABANDON_TIME = 3
@@ -87,7 +87,7 @@ PHONE_TIME = 5
 # PHONE BEHAVIOR CONFIG
 # ===============================
 
-PHONE_FACE_ZONE = 0.3
+PHONE_FACE_ZONE = 0.4
 PHONE_TORSO_ZONE = 0.6
 
 PHONE_RAISE_SPEED_THRESHOLD = 80  # pixels/sec

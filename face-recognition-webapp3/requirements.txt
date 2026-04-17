@@ -1,5 +1,9 @@
 # FaceGuard Pro - Python Dependencies
-
+opencv-python
+ultralytics
+matplotlib
+numpy
+pygame
 # Core web framework
 Flask>=2.3.3
 Werkzeug>=2.3.7

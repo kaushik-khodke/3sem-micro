@@ -20,12 +20,13 @@ class WeaponDetector:
     """Detects weapons and dangerous objects using standard YOLOv8 model."""
     
     def __init__(self):
-        from ultralytics import YOLO
-        model_path = config.OBJECT_MODEL_PATH
-        print(f"[WeaponDetector] Loading object model: {model_path}")
+        import torch
+        self.device = 'cuda' if torch.cuda.is_available() else 'cpu'
+        print(f"[WeaponDetector] Loading object model: {model_path} on {self.device}")
         self.model = YOLO(model_path)
         if not model_path.endswith(".onnx"):
             self.model.fuse()
+        self.model.to(self.device)
         # COCO class names for weapons
         self.weapon_names = {
             config.KNIFE: "KNIFE",
@@ -85,7 +86,19 @@ class SuspiciousPipeline:
             self.abandon_detector = AbandonedObjectDetector()
             self.conflict_detector = ConflictDetector()
             self.scorer = ThreatScorer()
-            print("[SuspiciousPipeline] Initialized successfully (with weapon detection)")
+            
+            # Optimization: frame skipping state
+            self.frame_count = 0
+            self.last_tracked_objects = []
+            self.last_suspicious_ids = []
+            self.last_suspicious_bags = []
+            self.last_conflict_alert = False
+            self.last_pair_scores = {}
+            self.last_weapon_detections = []
+            self.last_instant_scores = {}
+            self.last_session_scores = {}
+            
+            print(f"[SuspiciousPipeline] Initialized successfully (Detect every {config.DETECT_EVERY_N} frames)")
         except Exception as e:
             print(f"[SuspiciousPipeline] INIT ERROR: {e}")
             raise
@@ -119,25 +132,52 @@ class SuspiciousPipeline:
             frame = cv2.resize(frame, (config.FRAME_WIDTH, config.FRAME_HEIGHT))
             frame_copy = frame.copy()
             
-            # === Person detection (pose model) ===
-            results = self.detector.detect(frame)
-            tracked_objects = self.detector.parse_tracked_objects(results)
+            # === Optimization: Frame Skipping ===
+            self.frame_count += 1
+            is_detect_frame = (self.frame_count % config.DETECT_EVERY_N == 0)
             
-            video_timestamp = time.time()
-            
-            suspicious_ids = self.loiter_detector.update(tracked_objects)
-            suspicious_bags = self.abandon_detector.update(tracked_objects)
-            conflict_alert, pair_scores = self.conflict_detector.update(tracked_objects, video_timestamp)
-            
-            # === Weapon detection (standard model) ===
-            weapon_detections = self.weapon_detector.detect(frame)
+            if is_detect_frame:
+                # === Person detection (pose model) ===
+                results = self.detector.detect(frame)
+                tracked_objects = self.detector.parse_tracked_objects(results)
+                
+                video_timestamp = time.time()
+                
+                suspicious_ids = self.loiter_detector.update(tracked_objects)
+                suspicious_bags = self.abandon_detector.update(tracked_objects)
+                conflict_alert, pair_scores = self.conflict_detector.update(tracked_objects, video_timestamp)
+                
+                # === Weapon detection (standard model) ===
+                weapon_detections = self.weapon_detector.detect(frame)
+                
+                instant_scores, session_scores = self.scorer.update(
+                    tracked_objects, suspicious_ids, suspicious_bags, 
+                    conflict_alert, pair_scores, weapons_found=[d for d in weapon_detections if d["is_weapon"]]
+                )
+                
+                # Update cache
+                self.last_tracked_objects = tracked_objects
+                self.last_suspicious_ids = suspicious_ids
+                self.last_suspicious_bags = suspicious_bags
+                self.last_conflict_alert = conflict_alert
+                self.last_pair_scores = pair_scores
+                self.last_weapon_detections = weapon_detections
+                self.last_instant_scores = instant_scores
+                self.last_session_scores = session_scores
+            else:
+                # Reuse cached results for smooth UI
+                tracked_objects = self.last_tracked_objects
+                suspicious_ids = self.last_suspicious_ids
+                suspicious_bags = self.last_suspicious_bags
+                conflict_alert = self.last_conflict_alert
+                pair_scores = self.last_pair_scores
+                weapon_detections = self.last_weapon_detections
+                instant_scores = self.last_instant_scores
+                session_scores = self.last_session_scores
+
+            # Filter weapons for logic below
             weapons_found = [d for d in weapon_detections if d["is_weapon"]]
-            dangerous_found = weapon_detections  # includes bottles etc.
-            
-            instant_scores, session_scores = self.scorer.update(
-                tracked_objects, suspicious_ids, suspicious_bags, 
-                conflict_alert, pair_scores, weapons_found=weapons_found
-            )
+            dangerous_found = weapon_detections
             
             # Collect ALL active alerts (multiple can fire at once)
             active_alerts = []
